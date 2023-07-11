@@ -11,11 +11,11 @@
       -h, --help            show this help message and exit
       -c CHAT, --chat CHAT  chat
       -q QUANTITY, --quantity QUANTITY
-                            Quantity messages for download
+                            Quantity of messages to download
 
 ## Examples:
-### Download last media message
+### Download last media message from @me (saved messages)
     python3 telman.py -c me
-### Download last N media messages
+### Download last N media messages from @me (saved messages)
     python3 telman.py -c me -q <N>
 

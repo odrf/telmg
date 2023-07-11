@@ -12,12 +12,13 @@ def callback(current, total):
     pbar.update(current-prev_curr)
     prev_curr = current
 
-async def download(desde):
+async def download(desde, quantity):
+    quantity = int(quantity)
     me = await client.get_me()
     util.create_directory('downloads')
     global pbar
     global prev_curr
-    async for message in client.iter_messages(desde, limit=1):
+    async for message in client.iter_messages(desde, limit=quantity):
         # print(message.media.document)
         if(message.document):
             name = F'{message.message}'
@@ -37,6 +38,9 @@ if __name__ == '__main__':
     opt = args.train_options()
     if(opt.chat):
         with client:
-            client.loop.run_until_complete(download(opt.chat))
+            if(opt.quantity):
+                client.loop.run_until_complete(download(opt.chat, opt.quantity))
+            else:
+                client.loop.run_until_complete(download(opt.chat, 1))
 
     

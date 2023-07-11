@@ -15,7 +15,7 @@
 
 ## Examples:
 ### Download last media message
-    python3 telman.py -c me
+    python3 telmg.py -c me
 ### Download last N media messages
-    python3 telman.py -c me -q <N>
+    python3 telmg.py -c me -q <N>
 

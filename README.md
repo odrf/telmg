@@ -3,12 +3,7 @@
 ## Install requeriments:
     
     pip install -r requeriments.txt
-## Usage:
-
-    python3 telman.py -c me
-## Download last N elements
     
-    python3 telman.py -c me -q <N>
 ## HELP
     usage: telman.py [-h] [-c CHAT] [-q QUANTITY]
 
@@ -17,4 +12,10 @@
       -c CHAT, --chat CHAT  chat
       -q QUANTITY, --quantity QUANTITY
                             Quantity messages for download
+
+## Examples:
+### Download last media message
+    python3 telman.py -c me
+### Download last N media messages
+    python3 telman.py -c me -q <N>
 

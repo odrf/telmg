@@ -6,9 +6,9 @@
 ## Usage:
 
     python3 telman.py -c me
-## Download quantity last 3 elements
+## Download last N elements
     
-    python3 telman.py -c me -q 3
+    python3 telman.py -c me -q <N>
 ## HELP
     usage: telman.py [-h] [-c CHAT] [-q QUANTITY]
 

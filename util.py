@@ -8,7 +8,11 @@ def create_directory(dir):
             os.mkdir(dir)
         except OSError as e:
             if e.errno != errno.EEXIST:
-                 raise
+                raise
+            
+def get_extension(file):
+    ext = file.split(".")
+    return ext[len(ext)-1]
 
 def to_json(file, key, some):
     data = {}

@@ -1,6 +1,6 @@
 # TELMG
 
-## Install requeriments:
+## Install requeriments: 
     
     pip install -r requeriments.txt
     

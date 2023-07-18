@@ -39,7 +39,8 @@ async def upload(chat, file):
     thumb = util.get_thumb(file) if stream else None
     await client.send_file(chat, file, caption=file, supports_streaming=stream, thumb=thumb, progress_callback=callback)
     pbar.close()
-    os.remove(thumb)
+    if thumb:
+        os.remove(thumb)
 
 if __name__ == '__main__':
     opt = args.train_options()

@@ -35,8 +35,11 @@ async def upload(chat, file):
     sz = os.path.getsize(file)
     pbar = tqdm(total=sz, desc=F"Uploading {file}", unit='B', unit_scale=True)
     prev_curr = 0
-    await client.send_file(chat, file, caption=file, progress_callback=callback)
+    stream = True if 'mp4' in util.get_extension(file) else False
+    thumb = util.get_thumb(file) if stream else None
+    await client.send_file(chat, file, caption=file, supports_streaming=stream, thumb=thumb, progress_callback=callback)
     pbar.close()
+    os.remove(thumb)
 
 if __name__ == '__main__':
     opt = args.train_options()

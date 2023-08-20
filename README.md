@@ -1,7 +1,8 @@
 # TELMG
 
 ##
-    Note that you need an api_id & api_hash to be able to use telmg, please visit https://my.telegram.org or send me an email to odrf@ciencias.unam.mx
+    Note that you need an api_id & api_hash to be able to use telmg,
+    please visit https://my.telegram.org or send me an email to odrf@ciencias.unam.mx
 
 ## Install requeriments: 
     

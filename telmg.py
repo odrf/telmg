@@ -18,13 +18,19 @@ async def download(chat, quantity):
     global pbar
     global prev_curr
     async for message in client.iter_messages(chat, limit=quantity):
-        if(message.document):
+        # print(message)
+        if(message):
+            name = F'{message.message}'
+            print(name)
+            pbar = tqdm(desc=F"Downloading {name}", unit='B', unit_scale=True)   
+        elif(message.document):
             name = F'{message.message}'
             pbar = tqdm(total=message.document.size, desc=F"Downloading {name}", unit='B', unit_scale=True)
         elif(message.media.photo):
                 sz = message.media.photo.sizes[1].size
                 name = F'{message.message}'
                 pbar = tqdm(total=sz, desc=F"Downloading {name}", unit='B', unit_scale=True)
+             
         prev_curr = 0
         await message.download_media('{}/{}'.format('downloads',name), progress_callback=callback)
         pbar.close()
